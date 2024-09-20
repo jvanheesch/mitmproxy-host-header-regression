@@ -1,0 +1,18 @@
+services:
+  mitm10:
+    image: mitmproxy/mitmproxy:10.0.0
+    command: mitmdump
+      --mode regular@443
+      -s /log_headers.py
+    volumes:
+      - ./log_headers.py:/log_headers.py
+  mitm9:
+    image: mitmproxy/mitmproxy:9.0.1
+    command: mitmdump
+      --mode regular@443
+      -s /log_headers.py
+    volumes:
+      - ./log_headers.py:/log_headers.py
+  curl:
+    image: curlimages/curl:7.82.0
+    entrypoint: [ "tail", "-f", "/dev/null" ]

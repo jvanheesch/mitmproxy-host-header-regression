@@ -1,0 +1,1 @@
+This repository contains a reproducer for the following issue: https://github.com/mitmproxy/mitmproxy/issues/7200
